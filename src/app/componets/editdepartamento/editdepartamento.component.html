@@ -1,0 +1,11 @@
+<div>
+    <form #insertForm="ngForm">
+        <label >ID</label>
+        <input type="number" id="cajaid" #cajaid name="cajaid" value="{{departamento.idDepartamento}}" disabled>
+        <label >Nombre</label>
+        <input type="text" value="{{departamento.nombre}}" id="cajanombre" #cajanombre name="cajanombre">
+        <label >Localidad</label>
+        <input type="text" value="{{departamento.localidad}}" id="cajalocalidad"  #cajalocalidad name="cajalocalidad">
+    <button (click)="modificarDepartamento()">Modificar</button>
+    </form>
+</div>

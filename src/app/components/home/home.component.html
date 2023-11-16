@@ -1,0 +1,24 @@
+<div>
+    <img src="" alt="" *ngIf="departamentos">
+    
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Id Departamento</th>
+                <th>Departamento</th>
+                <th>Localidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dept of departamentos">
+                <td>{{dept.idDepartamento}}</td>
+                <td>{{dept.nombre}}</td>
+                <td>{{dept.localidad}}</td>
+                <!-- DOS OPCIONES PARA PASAR POR PARAMETRO LOS DATOS -->
+                <!-- <button [routerLink]="['editar/'+dept.idDepartamento + '/' + dept.nombre+ '/' + dept.localidad]">EDITAR  </button> -->
+                <button class="bg-success" [routerLink]="['editar/',dept.idDepartamento, dept.nombre,dept.localidad]">EDITAR  </button>
+                <button (click)="eliminar(dept.idDepartamento)" class="bg-danger">ELIMINAR</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
